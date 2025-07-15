@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsiv</title>
-    <link rel="stylesheet" href="style/style.css">
+    <title>Hemburger Menu | Code Mentor</title>
+    <link rel="stylesheet" href="style/style.css">    
 </head>
 <body>
     <nav>
-        <div class ="log">
-            <img src="images/redman.png" alt="">
-            <h3>Responsiv</h3>
+        <div class="logo">
+            <h1>Logo</h1>
         </div>
-
-        <div class="Hemburgare">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class ="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#serv">Cases</a></li>
-            <li><a href="#services">services</a></li>
-            <li><a class="nav-btn" href="contect">Contact</a></li>
-
-
+        <ul id="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact</a></li>
         </ul>
-
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
     </nav>
-    
+
+
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+        
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </body>
 </html>
