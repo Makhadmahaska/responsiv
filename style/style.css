@@ -1,74 +1,92 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-html,body{
-    height: 100%;
-    width: 100%;
-    background: #3498db;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #3498db;
 }
 
-nav{
-    padding: 10px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #004274;
+  position: relative;
+  height: 70px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
+}
+
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+#menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
     background: #004274;
-    position: relative;
-    height: 70px;
-}
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transition: max-height 0.3s ease;
+  }
 
-.logo{
-    color: #fff;
-}
+  
+  #menu-toggle:checked + .menu-icon + ul {
+    max-height: 500px; 
+  }
 
-nav ul{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
+  nav ul li {
+    padding: 15px 0;
+    text-align: center;
+  }
 
-nav ul li{
-    list-style-type: none;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.menu-icon{
-    display: none;
-}
-
-.menu-icon i{
-    color: #fff;
-    font-size: 30px;
-}
-
-@media (max-width:600px) {
-    nav ul{
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        text-align: center;
-        background: #004274;
-        gap: 0;
-        overflow: hidden;
-    }
-    nav ul li{
-        padding: 20px;
-        padding-top: 0;
-    }
-    .menu-icon{
-        display: block;
-    }
-    #menuList{
-        transition: all 0.5s;
-    }
+  
+  .menu-icon {
+    display: block;
+  }
 }
